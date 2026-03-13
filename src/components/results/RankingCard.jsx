@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Trophy, Star, AlertTriangle, ExternalLink, ChevronDown, ChevronUp, TrendingUp, Percent } from 'lucide-react';
 import { Button } from '@/components/ui/button';
