@@ -39,7 +39,7 @@ function ApprovalBar({ probability }) {
 }
 
 export default function RankingCard({ match, position, delay }) {
-  const [expanded, setExpanded] = React.useState(position === 0);
+  const [expanded, setExpanded] = useState(position === 0);
   const style = positionStyles[position] || { badge: 'bg-zinc-700 text-white', border: 'border-zinc-700/30', bg: 'bg-zinc-900/80' };
   const { firm, score, reasons, warnings, approvalProbability } = match;
 
