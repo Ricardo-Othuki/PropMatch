@@ -10,6 +10,9 @@ import Landing from './pages/Landing';
 import Quiz from './pages/Quiz';
 import Results from './pages/Results';
 import Explorer from './pages/Explorer';
+import RiskSimulator from './pages/RiskSimulator';
+import Ranking from './pages/Ranking';
+import Dashboard from './pages/Dashboard';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -42,6 +45,9 @@ const AuthenticatedApp = () => {
       <Route path="/Quiz" element={<Quiz />} />
       <Route path="/Results" element={<Results />} />
       <Route path="/Explorer" element={<Explorer />} />
+      <Route path="/RiskSimulator" element={<RiskSimulator />} />
+      <Route path="/Ranking" element={<Ranking />} />
+      <Route path="/Dashboard" element={<Dashboard />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
