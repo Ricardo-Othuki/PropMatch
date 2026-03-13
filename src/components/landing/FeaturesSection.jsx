@@ -1,38 +1,45 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, BarChart3, Shield, Zap, TrendingUp, Brain } from 'lucide-react';
+import { Target, BarChart3, Shield, Zap, TrendingUp, Brain, Calculator, LayoutDashboard, Filter } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const features = [
   {
     icon: Brain,
-    title: 'Quiz Inteligente',
-    description: 'Perguntas precisas sobre seu estilo operacional, objetivos e tolerância a risco.'
+    title: 'Diagnóstico Inteligente',
+    description: 'Quiz que detecta overtrading, risco mal calibrado e padrões de reprovação do seu perfil.',
+    to: '/Quiz'
   },
   {
     icon: Target,
     title: 'Match Personalizado',
-    description: 'Algoritmo que cruza seu perfil com as regras reais de cada mesa proprietária.'
+    description: 'Probabilidade real de aprovação por mesa, baseada no seu histórico e estilo.',
+    to: '/Quiz'
   },
   {
-    icon: BarChart3,
-    title: 'Ranking Transparente',
-    description: 'Ranking claro com motivos, destaques e alertas para cada mesa recomendada.'
+    icon: Calculator,
+    title: 'Simulador de Risco',
+    description: 'Calcule o tamanho ideal de posição, stops máximos e plano operacional matemático.',
+    to: '/RiskSimulator'
+  },
+  {
+    icon: Filter,
+    title: 'Ranking por Cenário',
+    description: 'Filtre mesas por "Scalpers que operam notícia", "Melhor para iniciantes" e mais.',
+    to: '/Ranking'
+  },
+  {
+    icon: LayoutDashboard,
+    title: 'Dashboard de Tentativas',
+    description: 'Registre suas tentativas ativas e receba alertas antes de violar o drawdown.',
+    to: '/Dashboard'
   },
   {
     icon: Shield,
-    title: 'Análise de Risco',
-    description: 'Avaliação de drawdown, consistência, payout e dificuldade de aprovação.'
+    title: 'Alertas Preventivos',
+    description: 'O sistema monitora seu saldo e avisa antes de você cruzar o limite de perda.',
+    to: '/Dashboard'
   },
-  {
-    icon: TrendingUp,
-    title: 'Comparador de Mesas',
-    description: 'Compare mesas lado a lado em todos os critérios que importam.'
-  },
-  {
-    icon: Zap,
-    title: 'Resultado Instantâneo',
-    description: 'Em menos de 2 minutos você sabe qual mesa é ideal pro seu perfil.'
-  }
 ];
 
 export default function FeaturesSection() {
@@ -60,10 +67,15 @@ export default function FeaturesSection() {
             >
               <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-4 group-hover:bg-amber-500/20 transition-colors">
                 <feature.icon className="w-6 h-6 text-amber-400" />
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
-              <p className="text-sm text-zinc-400 leading-relaxed">{feature.description}</p>
-            </motion.div>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
+                <p className="text-sm text-zinc-400 leading-relaxed">{feature.description}</p>
+                {feature.to && (
+                <Link to={feature.to} className="inline-block mt-3 text-xs text-amber-400 hover:text-amber-300 font-medium">
+                  Acessar →
+                </Link>
+                )}
+                </motion.div>
           ))}
         </div>
       </div>
