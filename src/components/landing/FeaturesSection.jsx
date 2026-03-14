@@ -35,10 +35,10 @@ const features = [
     to: '/Dashboard'
   },
   {
-    icon: Shield,
-    title: 'Alertas Preventivos',
-    description: 'O sistema monitora seu saldo e avisa antes de você cruzar o limite de perda.',
-    to: '/Dashboard'
+    icon: BarChart3,
+    title: 'Analisador de Trades',
+    description: 'Faça upload do seu histórico CSV/Excel e descubra se você passaria em uma prop firm.',
+    to: '/TradeAnalyzer'
   },
 ];
 

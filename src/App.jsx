@@ -11,6 +11,7 @@ import Quiz from './pages/Quiz';
 import Results from './pages/Results';
 import Explorer from './pages/Explorer';
 import RiskSimulator from './pages/RiskSimulator';
+import TradeAnalyzer from './pages/TradeAnalyzer';
 import Ranking from './pages/Ranking';
 import Dashboard from './pages/Dashboard';
 
@@ -46,6 +47,7 @@ const AuthenticatedApp = () => {
       <Route path="/Results" element={<Results />} />
       <Route path="/Explorer" element={<Explorer />} />
       <Route path="/RiskSimulator" element={<RiskSimulator />} />
+      <Route path="/TradeAnalyzer" element={<TradeAnalyzer />} />
       <Route path="/Ranking" element={<Ranking />} />
       <Route path="/Dashboard" element={<Dashboard />} />
       <Route path="*" element={<PageNotFound />} />
