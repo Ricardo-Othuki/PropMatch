@@ -144,6 +144,8 @@ export default function Dashboard() {
           onSaved={() => queryClient.invalidateQueries({ queryKey: ['attempts'] })}
         />
       )}
+
+      <AgentChat />
     </div>
   );
 }
