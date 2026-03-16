@@ -43,14 +43,16 @@ const AuthenticatedApp = () => {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/Landing" replace />} />
-      <Route path="/Landing" element={<Landing />} />
-      <Route path="/Quiz" element={<Quiz />} />
-      <Route path="/Results" element={<Results />} />
-      <Route path="/Explorer" element={<Explorer />} />
-      <Route path="/RiskSimulator" element={<RiskSimulator />} />
-      <Route path="/TradeAnalyzer" element={<TradeAnalyzer />} />
-      <Route path="/Ranking" element={<Ranking />} />
-      <Route path="/Dashboard" element={<Dashboard />} />
+      <Route element={<Layout />}>
+        <Route path="/Landing" element={<Landing />} />
+        <Route path="/Quiz" element={<Quiz />} />
+        <Route path="/Results" element={<Results />} />
+        <Route path="/Explorer" element={<Explorer />} />
+        <Route path="/RiskSimulator" element={<RiskSimulator />} />
+        <Route path="/TradeAnalyzer" element={<TradeAnalyzer />} />
+        <Route path="/Ranking" element={<Ranking />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
+      </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
