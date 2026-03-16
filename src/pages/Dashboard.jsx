@@ -7,6 +7,7 @@ import { ArrowLeft, Plus, LayoutDashboard, Target, TrendingUp, AlertTriangle } f
 import { Button } from '@/components/ui/button';
 import AttemptCard from '../components/dashboard/AttemptCard';
 import NewAttemptModal from '../components/dashboard/NewAttemptModal';
+import AgentChat from '../components/dashboard/AgentChat';
 
 export default function Dashboard() {
   const queryClient = useQueryClient();
