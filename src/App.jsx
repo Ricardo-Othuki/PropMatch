@@ -14,6 +14,7 @@ import RiskSimulator from './pages/RiskSimulator';
 import TradeAnalyzer from './pages/TradeAnalyzer';
 import Ranking from './pages/Ranking';
 import Dashboard from './pages/Dashboard';
+import Layout from './components/Layout';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
