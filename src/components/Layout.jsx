@@ -14,6 +14,9 @@ export default function Layout() {
         <nav className="flex items-center gap-2">
           {isAuthenticated ? (
             <>
+              <Link to="/Landing" className="text-zinc-400 hover:text-white text-xs px-3 py-1.5 rounded-lg hover:bg-zinc-800 transition-colors">Home</Link>
+              <Link to="/Explorer" className="text-zinc-400 hover:text-white text-xs px-3 py-1.5 rounded-lg hover:bg-zinc-800 transition-colors">Explorar</Link>
+              <Link to="/Ranking" className="text-zinc-400 hover:text-white text-xs px-3 py-1.5 rounded-lg hover:bg-zinc-800 transition-colors">Ranking</Link>
               <Link to="/Quiz" className="text-zinc-400 hover:text-white text-xs px-3 py-1.5 rounded-lg hover:bg-zinc-800 transition-colors">Quiz</Link>
               <Link to="/RiskSimulator" className="text-zinc-400 hover:text-white text-xs px-3 py-1.5 rounded-lg hover:bg-zinc-800 transition-colors">Simulador</Link>
               <Link to="/Dashboard" className="text-zinc-400 hover:text-white text-xs px-3 py-1.5 rounded-lg hover:bg-zinc-800 transition-colors">Dashboard</Link>
