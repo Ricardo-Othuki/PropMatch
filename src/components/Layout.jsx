@@ -21,12 +21,14 @@ export default function Layout() {
               <Link to="/RiskSimulator" className="text-zinc-400 hover:text-white text-xs px-3 py-1.5 rounded-lg hover:bg-zinc-800 transition-colors">Simulador</Link>
               <Link to="/Dashboard" className="text-zinc-400 hover:text-white text-xs px-3 py-1.5 rounded-lg hover:bg-zinc-800 transition-colors">Dashboard</Link>
               <Link to="/TradeAnalyzer" className="text-zinc-400 hover:text-white text-xs px-3 py-1.5 rounded-lg hover:bg-zinc-800 transition-colors">Analisador</Link>
+              <Link to="/Plans" className="text-zinc-400 hover:text-white text-xs px-3 py-1.5 rounded-lg hover:bg-zinc-800 transition-colors">Planos</Link>
               <Button size="sm" variant="ghost" onClick={() => base44.auth.logout()} className="text-zinc-400 hover:text-white text-xs ml-2">Sair</Button>
             </>
           ) : (
             <>
               <Link to="/Explorer" className="text-zinc-400 hover:text-white text-xs px-3 py-1.5 rounded-lg hover:bg-zinc-800 transition-colors">Explorar Mesas</Link>
               <Link to="/Ranking" className="text-zinc-400 hover:text-white text-xs px-3 py-1.5 rounded-lg hover:bg-zinc-800 transition-colors">Ranking</Link>
+              <Link to="/Plans" className="text-zinc-400 hover:text-white text-xs px-3 py-1.5 rounded-lg hover:bg-zinc-800 transition-colors">Planos</Link>
               <Button size="sm" onClick={() => base44.auth.redirectToLogin()} className="bg-amber-500 hover:bg-amber-400 text-zinc-950 font-semibold rounded-lg text-xs ml-2">Entrar / Cadastrar</Button>
             </>
           )}

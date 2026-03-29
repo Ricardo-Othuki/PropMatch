@@ -13,6 +13,7 @@ import RiskSimulator from './pages/RiskSimulator';
 import TradeAnalyzer from './pages/TradeAnalyzer';
 import Ranking from './pages/Ranking';
 import Dashboard from './pages/Dashboard';
+import Plans from './pages/Plans';
 import Layout from './components/Layout';
 
 const ProtectedRoute = ({ children }) => {
@@ -47,6 +48,7 @@ function App() {
               <Route path="/Landing" element={<Landing />} />
               <Route path="/Explorer" element={<Explorer />} />
               <Route path="/Ranking" element={<Ranking />} />
+              <Route path="/Plans" element={<Plans />} />
               <Route path="/Quiz" element={<ProtectedRoute><Quiz /></ProtectedRoute>} />
               <Route path="/Results" element={<ProtectedRoute><Results /></ProtectedRoute>} />
               <Route path="/RiskSimulator" element={<ProtectedRoute><RiskSimulator /></ProtectedRoute>} />
