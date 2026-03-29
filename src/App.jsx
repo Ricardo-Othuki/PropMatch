@@ -29,7 +29,7 @@ const ProtectedRoute = ({ children }) => {
 
   if (authError) {
     if (authError.type === 'user_not_registered') return <UserNotRegisteredError />;
-    if (authError.type === 'auth_required') { navigateToLogin(); return null; }
+    // auth_required is handled per-route by ProtectedRoute — do not redirect globally
   }
 
   if (!isAuthenticated) return <Navigate to="/Landing" replace />;
