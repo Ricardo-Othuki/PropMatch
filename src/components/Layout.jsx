@@ -1,10 +1,27 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 import AgentChat from './dashboard/AgentChat';
+import { useAuth } from '@/lib/AuthContext';
+import { base44 } from '@/api/base44Client';
+import { Button } from '@/components/ui/button';
 
 export default function Layout() {
+  const { isAuthenticated } = useAuth();
+
   return (
     <>
-      <Outlet />
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 bg-zinc-950/90 backdrop-blur border-b border-zinc-900">
+        <Link to="/Landing" className="text-white font-bold tracking-widest text-sm">PROPMATCH</Link>
+        <div>
+          {isAuthenticated ? (
+            <Button size="sm" variant="ghost" onClick={() => base44.auth.logout()} className="text-zinc-400 hover:text-white text-xs">Sair</Button>
+          ) : (
+            <Button size="sm" onClick={() => base44.auth.redirectToLogin()} className="bg-amber-500 hover:bg-amber-400 text-zinc-950 font-semibold rounded-lg text-xs">Entrar / Cadastrar</Button>
+          )}
+        </div>
+      </header>
+      <div className="pt-12">
+        <Outlet />
+      </div>
       <AgentChat />
     </>
   );

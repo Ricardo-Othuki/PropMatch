@@ -2,12 +2,10 @@ import React from 'react';
 import HeroSection from '../components/landing/HeroSection';
 import FeaturesSection from '../components/landing/FeaturesSection';
 import CTASection from '../components/landing/CTASection';
-import Navbar from '../components/landing/Navbar';
 
 export default function Landing() {
   return (
     <div className="bg-zinc-950 min-h-screen">
-      <Navbar />
       <HeroSection />
       <FeaturesSection />
       <CTASection />
