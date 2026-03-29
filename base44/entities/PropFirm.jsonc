@@ -1,0 +1,146 @@
+{
+  "name": "PropFirm",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome da mesa propriet\u00e1ria"
+    },
+    "logo_url": {
+      "type": "string",
+      "description": "URL do logo da mesa"
+    },
+    "website_url": {
+      "type": "string",
+      "description": "URL do site da mesa"
+    },
+    "affiliate_url": {
+      "type": "string",
+      "description": "Link de afiliado"
+    },
+    "account_sizes": {
+      "type": "array",
+      "description": "Tamanhos de conta dispon\u00edveis (em USD)",
+      "items": {
+        "type": "number"
+      }
+    },
+    "drawdown_type": {
+      "type": "string",
+      "enum": [
+        "trailing",
+        "eod",
+        "static"
+      ],
+      "description": "Tipo de drawdown"
+    },
+    "max_drawdown_percent": {
+      "type": "number",
+      "description": "Drawdown m\u00e1ximo em %"
+    },
+    "profit_target_percent": {
+      "type": "number",
+      "description": "Meta de lucro em % para aprova\u00e7\u00e3o"
+    },
+    "daily_loss_limit_percent": {
+      "type": "number",
+      "description": "Limite de perda di\u00e1ria em %"
+    },
+    "min_trading_days": {
+      "type": "number",
+      "description": "Dias m\u00ednimos de opera\u00e7\u00e3o"
+    },
+    "payout_split": {
+      "type": "number",
+      "description": "Split de payout para o trader (ex: 80 = 80%)"
+    },
+    "payout_frequency": {
+      "type": "string",
+      "enum": [
+        "semanal",
+        "quinzenal",
+        "mensal",
+        "sob_demanda"
+      ],
+      "description": "Frequ\u00eancia de saque"
+    },
+    "consistency_rule": {
+      "type": "string",
+      "enum": [
+        "nenhuma",
+        "leve",
+        "moderada",
+        "rigorosa"
+      ],
+      "description": "Regra de consist\u00eancia"
+    },
+    "hft_allowed": {
+      "type": "boolean",
+      "description": "Permite HFT?"
+    },
+    "news_trading_allowed": {
+      "type": "boolean",
+      "description": "Permite operar em not\u00edcia?"
+    },
+    "max_contracts": {
+      "type": "number",
+      "description": "Limite m\u00e1ximo de contratos"
+    },
+    "copy_trading_allowed": {
+      "type": "boolean",
+      "description": "Permite copy trading?"
+    },
+    "scaling_plan": {
+      "type": "boolean",
+      "description": "Possui plano de escalonamento?"
+    },
+    "evaluation_phases": {
+      "type": "number",
+      "description": "N\u00famero de fases de avalia\u00e7\u00e3o"
+    },
+    "estimated_difficulty": {
+      "type": "string",
+      "enum": [
+        "facil",
+        "moderada",
+        "dificil",
+        "muito_dificil"
+      ],
+      "description": "Dificuldade estimada de aprova\u00e7\u00e3o"
+    },
+    "price_range": {
+      "type": "string",
+      "enum": [
+        "barato",
+        "medio",
+        "caro"
+      ],
+      "description": "Faixa de pre\u00e7o da avalia\u00e7\u00e3o"
+    },
+    "highlights": {
+      "type": "array",
+      "description": "Destaques/diferenciais da mesa",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "description": "Pontos de aten\u00e7\u00e3o",
+      "items": {
+        "type": "string"
+      }
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Mesa ativa no ranking?"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "rls": {
+    "read": true
+  }
+}
