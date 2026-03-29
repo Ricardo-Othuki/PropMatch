@@ -11,13 +11,23 @@ export default function Layout() {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 bg-zinc-950/90 backdrop-blur border-b border-zinc-900">
         <Link to="/Landing" className="text-white font-bold tracking-widest text-sm">PROPMATCH</Link>
-        <div>
+        <nav className="flex items-center gap-2">
           {isAuthenticated ? (
-            <Button size="sm" variant="ghost" onClick={() => base44.auth.logout()} className="text-zinc-400 hover:text-white text-xs">Sair</Button>
+            <>
+              <Link to="/Quiz" className="text-zinc-400 hover:text-white text-xs px-3 py-1.5 rounded-lg hover:bg-zinc-800 transition-colors">Quiz</Link>
+              <Link to="/RiskSimulator" className="text-zinc-400 hover:text-white text-xs px-3 py-1.5 rounded-lg hover:bg-zinc-800 transition-colors">Simulador</Link>
+              <Link to="/Dashboard" className="text-zinc-400 hover:text-white text-xs px-3 py-1.5 rounded-lg hover:bg-zinc-800 transition-colors">Dashboard</Link>
+              <Link to="/TradeAnalyzer" className="text-zinc-400 hover:text-white text-xs px-3 py-1.5 rounded-lg hover:bg-zinc-800 transition-colors">Analisador</Link>
+              <Button size="sm" variant="ghost" onClick={() => base44.auth.logout()} className="text-zinc-400 hover:text-white text-xs ml-2">Sair</Button>
+            </>
           ) : (
-            <Button size="sm" onClick={() => base44.auth.redirectToLogin()} className="bg-amber-500 hover:bg-amber-400 text-zinc-950 font-semibold rounded-lg text-xs">Entrar / Cadastrar</Button>
+            <>
+              <Link to="/Explorer" className="text-zinc-400 hover:text-white text-xs px-3 py-1.5 rounded-lg hover:bg-zinc-800 transition-colors">Explorar Mesas</Link>
+              <Link to="/Ranking" className="text-zinc-400 hover:text-white text-xs px-3 py-1.5 rounded-lg hover:bg-zinc-800 transition-colors">Ranking</Link>
+              <Button size="sm" onClick={() => base44.auth.redirectToLogin()} className="bg-amber-500 hover:bg-amber-400 text-zinc-950 font-semibold rounded-lg text-xs ml-2">Entrar / Cadastrar</Button>
+            </>
           )}
-        </div>
+        </nav>
       </header>
       <div className="pt-12">
         <Outlet />
