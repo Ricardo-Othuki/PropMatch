@@ -16,18 +16,18 @@ export default function HeroSection() {
 
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)',
-          backgroundSize: '60px 60px'
-        }}
-      />
+      style={{
+        backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)',
+        backgroundSize: '60px 60px'
+      }} />
+      
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
+          transition={{ duration: 0.8, ease: "easeOut" }}>
+          
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 mb-8">
             <Zap className="w-4 h-4 text-amber-400" />
@@ -60,7 +60,7 @@ export default function HeroSection() {
               </Button>
             </Link>
             <Link to="/Explorer">
-              <Button variant="outline" size="lg" className="border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-white text-lg px-8 py-6 rounded-xl">
+              <Button variant="outline" size="lg" className="bg-slate-700 text-zinc-300 px-8 py-6 text-lg font-medium rounded-xl inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border shadow-sm h-10 border-zinc-700 hover:bg-zinc-800 hover:text-white">
                 Explorar Todas as Mesas
               </Button>
             </Link>
@@ -72,20 +72,20 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-20 grid grid-cols-3 gap-8 max-w-lg mx-auto"
-        >
+          className="mt-20 grid grid-cols-3 gap-8 max-w-lg mx-auto">
+          
           {[
-            { value: '8+', label: 'Mesas Analisadas' },
-            { value: '15+', label: 'Critérios' },
-            { value: '100%', label: 'Personalizado' },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
+          { value: '8+', label: 'Mesas Analisadas' },
+          { value: '15+', label: 'Critérios' },
+          { value: '100%', label: 'Personalizado' }].
+          map((stat) =>
+          <div key={stat.label} className="text-center">
               <div className="text-2xl sm:text-3xl font-bold text-white">{stat.value}</div>
               <div className="text-xs sm:text-sm text-zinc-500 mt-1">{stat.label}</div>
             </div>
-          ))}
+          )}
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
