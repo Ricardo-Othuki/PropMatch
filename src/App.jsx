@@ -19,7 +19,7 @@ import Layout from './components/Layout';
 const ProtectedRoute = ({ children }) => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin, isAuthenticated } = useAuth();
 
-  if (isLoadingPublicSettings || isLoadingAuth) {
+  if ((isLoadingPublicSettings || isLoadingAuth) && !authError) {
     return (
       <div className="fixed inset-0 flex items-center justify-center">
         <div className="w-8 h-8 border-4 border-slate-200 border-t-slate-800 rounded-full animate-spin"></div>
@@ -29,10 +29,9 @@ const ProtectedRoute = ({ children }) => {
 
   if (authError) {
     if (authError.type === 'user_not_registered') return <UserNotRegisteredError />;
-    // auth_required is handled per-route by ProtectedRoute — do not redirect globally
   }
 
-  if (!isAuthenticated) return <Navigate to="/Landing" replace />;
+  if (!isAuthenticated) { navigateToLogin(); return null; }
 
   return children;
 };

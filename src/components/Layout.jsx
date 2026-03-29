@@ -37,7 +37,7 @@ export default function Layout() {
       <div className="pt-12">
         <Outlet />
       </div>
-      <AgentChat />
+      {isAuthenticated && <AgentChat />}
     </>
   );
 }
