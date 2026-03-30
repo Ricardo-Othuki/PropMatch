@@ -141,11 +141,6 @@
     "name"
   ],
   "rls": {
-    "read": {
-      "$or": [
-        true,
-        {}
-      ]
-    }
+    "read": true
   }
 }
