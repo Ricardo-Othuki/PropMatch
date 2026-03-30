@@ -141,6 +141,6 @@
     "name"
   ],
   "rls": {
-    "read": true
+    "read": {}
   }
 }
