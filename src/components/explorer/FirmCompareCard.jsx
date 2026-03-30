@@ -11,11 +11,11 @@ const payoutLabels = { semanal: 'Semanal', quinzenal: 'Quinzenal', mensal: 'Mens
 const consistencyLabels = { nenhuma: 'Nenhuma', leve: 'Leve', moderada: 'Moderada', rigorosa: 'Rigorosa' };
 
 function BoolBadge({ value }) {
-  return value ? (
-    <span className="inline-flex items-center gap-1 text-green-400"><Check className="w-4 h-4" /> Sim</span>
-  ) : (
-    <span className="inline-flex items-center gap-1 text-red-400"><X className="w-4 h-4" /> Não</span>
-  );
+  return value ?
+  <span className="inline-flex items-center gap-1 text-green-400"><Check className="w-4 h-4" /> Sim</span> :
+
+  <span className="inline-flex items-center gap-1 text-red-400"><X className="w-4 h-4" /> Não</span>;
+
 }
 
 export default function FirmCompareCard({ firm }) {
@@ -91,19 +91,19 @@ export default function FirmCompareCard({ firm }) {
       </div>
 
       {/* Highlights */}
-      {firm.highlights?.length > 0 && (
-        <div className="mt-4 flex flex-wrap gap-1.5">
-          {firm.highlights.map((h, i) => (
-            <Badge key={i} className="bg-amber-500/10 text-amber-300 border-amber-500/20 border text-xs">{h}</Badge>
-          ))}
+      {firm.highlights?.length > 0 &&
+      <div className="mt-4 flex flex-wrap gap-1.5">
+          {firm.highlights.map((h, i) =>
+        <Badge key={i} className="bg-amber-500/10 text-amber-300 border-amber-500/20 border text-xs">{h}</Badge>
+        )}
         </div>
-      )}
+      }
 
       <a href={firm.affiliate_url || firm.website_url} target="_blank" rel="noopener noreferrer" className="block mt-4">
-        <Button variant="outline" className="w-full border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-white rounded-xl">
+        <Button variant="outline" className="bg-slate-600 text-zinc-300 px-4 py-2 text-sm font-medium rounded-xl inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border shadow-sm h-9 w-full border-zinc-700 hover:bg-zinc-800 hover:text-white">
           Visitar Site <ExternalLink className="w-4 h-4 ml-2" />
         </Button>
       </a>
-    </div>
-  );
+    </div>);
+
 }
